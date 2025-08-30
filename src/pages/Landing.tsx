@@ -1,3 +1,4 @@
+import About from "@/components/modules/Landing/About";
 import FloatingNav from "@/components/modules/Landing/FloatingNav";
 import Hero from "@/components/modules/Landing/Hero";
 
@@ -6,6 +7,7 @@ const Landing = () => {
         <div>
             <FloatingNav />
             <Hero />
+            <About />
         </div>
     );
 };

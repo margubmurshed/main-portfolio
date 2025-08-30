@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import myImage from "@/assets/images/margub-murshed-image.png";
 import ThreeDCard from "@/components/3DCard";
 import { fadeInUp, scaleIn, staggerContainer } from "@/animations/variants";
+import { Button } from "@/components/ui/button";
+import { Download, Eye } from "lucide-react";
 
 const Hero = () => {
     return (
@@ -15,7 +17,7 @@ const Hero = () => {
                     }}
                 />
 
-                <div className="container mx-auto flex flex-col items-center justify-center min-h-screen gap-12 md:gap-20 px-4 md:px-0">
+                <div className="container mx-auto flex flex-col items-center justify-center min-h-screen gap-12 md:gap-10 px-4 md:px-0">
 
                     {/* Text Section */}
                     <motion.div
@@ -55,6 +57,26 @@ const Hero = () => {
                                 className="w-full h-full object-cover rounded-2xl px-4 pt-4 sm:px-5 sm:pt-5"
                             />
                         </ThreeDCard>
+                    </motion.div>
+                    <motion.div variants={scaleIn} initial="hidden" animate="visible" className="flex gap-3 z-10">
+                        {/* Download Resume Button */}
+                        <Button
+                            size="lg"
+                            className="transform transition-transform duration-300 ease-in-out hover:scale-105"
+                        >
+                            <Download className="mr-2 h-5 w-5" /> {/* Icon on the left */}
+                            Download Resume
+                        </Button>
+
+                        {/* View Resume Button */}
+                        <Button
+                            variant="outline"
+                            size="lg"
+                            className="transform transition-transform duration-300 ease-in-out hover:scale-105"
+                        >
+                            <Eye className="mr-2 h-5 w-5" /> {/* Icon on the left */}
+                            View Resume
+                        </Button>
                     </motion.div>
 
                 </div>
