@@ -1,4 +1,5 @@
 import About from "@/components/modules/Landing/About";
+import Contact from "@/components/modules/Landing/Contact";
 import FloatingNav from "@/components/modules/Landing/FloatingNav";
 import Hero from "@/components/modules/Landing/Hero";
 import Projects from "@/components/modules/Landing/Projects";
@@ -23,6 +24,7 @@ const Landing = () => {
             <About />
             <Skills />
             <Projects />
+            <Contact />
         </div>
     );
 };

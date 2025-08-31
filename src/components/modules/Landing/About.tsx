@@ -1,5 +1,5 @@
 import { Eye } from "lucide-react";
-import { Link } from "react-router";
+import { Link } from "react-scroll";
 
 export default function About() {
     return (
@@ -42,7 +42,10 @@ export default function About() {
                     {/* Call-to-action / Highlight */}
                     <div className="mt-10 flex justify-center">
                         <Link
-                            to="#projects"
+                            smooth
+                            spy
+                            duration={600}
+                            to="projects"
                             className="px-6 py-3 rounded-2xl bg-primary text-background font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex gap-3"
                         >
                             <Eye /> View My Projects

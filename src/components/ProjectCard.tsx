@@ -21,6 +21,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     return (
         <motion.div
             whileHover={{ scale: 1.05 }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.3 }}
             className="relative rounded-xl overflow-hidden shadow-lg cursor-pointer group"
         >
             {/* Background Image */}
