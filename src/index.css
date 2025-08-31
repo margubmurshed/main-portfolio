@@ -6,6 +6,10 @@
   cursor: none; /* hides default browser cursor */
 }
 
+.active-link-scroll {
+  @apply text-background bg-primary;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {

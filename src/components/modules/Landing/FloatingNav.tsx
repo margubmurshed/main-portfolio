@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
 import { Home, User, Code, Mail } from "lucide-react";
+import { GiSkills } from "react-icons/gi";
 import { Link } from "react-scroll";
 
 const navItems = [
   { name: "Home", icon: <Home size={24} />, href: "home" },
   { name: "About", icon: <User size={24} />, href: "about" },
+  { name: "Skills", icon: <GiSkills size={24} />, href: "skills" },
   { name: "Projects", icon: <Code size={24} />, href: "projects" },
   { name: "Contact", icon: <Mail size={24} />, href: "contact" },
 ];
@@ -19,17 +21,18 @@ const FloatingNav = () => {
             className="group relative"
             whileHover={{ scale: 1.2 }}
           >
-            
-            <Link to={item.href} smooth duration={600} offset={-70} activeClass="text-red-500 bg-primary" className="text-white w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 cursor-pointer flex items-center justify-center">
-            {item.icon}
-            <motion.span
-              className="absolute left-full ml-3 px-3 py-1 rounded-md bg-white text-black whitespace-nowrap text-sm pointer-events-none opacity-0 group-hover:opacity-100"
-              initial={{ x: -10 }}
-              animate={{ x: 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              {item.name}
-            </motion.span>
+
+            <Link to={item.href} smooth duration={600} activeClass="active-link-scroll" spy className={`w-12 h-12 rounded-full flex items-center justify-center transition-all bg-white/10 hover:bg-white/20 shadow-md ${item.href === "home" && window.location.pathname === "/" ? "active" : ""
+              }`}>
+              <span className="mix-blend-difference">{item.icon}</span>
+              <motion.span
+                className="absolute left-full ml-3 px-3 py-1 rounded-md bg-white text-black whitespace-nowrap text-sm pointer-events-none opacity-0 group-hover:opacity-100"
+                initial={{ x: -10 }}
+                animate={{ x: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                {item.name}
+              </motion.span>
             </Link>
           </motion.li>
         ))}
