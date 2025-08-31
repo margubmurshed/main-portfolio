@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 export default function About() {
     return (
-        <section className="min-h-screen bg-background text-foreground flex items-center justify-center px-6">
+        <section className="min-h-screen bg-background text-foreground flex items-center justify-center px-6" id="about">
             <div className="max-w-4xl w-full text-center space-y-10">
                 {/* Section Title */}
                 <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight">

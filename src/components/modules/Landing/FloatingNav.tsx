@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
 import { Home, User, Code, Mail } from "lucide-react";
+import { Link } from "react-scroll";
 
 const navItems = [
-  { name: "Home", icon: <Home size={24} />, href: "#home" },
-  { name: "About", icon: <User size={24} />, href: "#about" },
-  { name: "Projects", icon: <Code size={24} />, href: "#projects" },
-  { name: "Contact", icon: <Mail size={24} />, href: "#contact" },
+  { name: "Home", icon: <Home size={24} />, href: "home" },
+  { name: "About", icon: <User size={24} />, href: "about" },
+  { name: "Projects", icon: <Code size={24} />, href: "projects" },
+  { name: "Contact", icon: <Mail size={24} />, href: "contact" },
 ];
 
 const FloatingNav = () => {
@@ -15,13 +16,12 @@ const FloatingNav = () => {
         {navItems.map((item, index) => (
           <motion.li
             key={index}
-            className="group relative flex items-center justify-center w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 cursor-pointer"
+            className="group relative"
             whileHover={{ scale: 1.2 }}
           >
-            {/* Icon */}
-            <div className="text-white">{item.icon}</div>
-
-            {/* Tooltip / Page Title */}
+            
+            <Link to={item.href} smooth duration={600} offset={-70} activeClass="text-red-500 bg-primary" className="text-white w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 cursor-pointer flex items-center justify-center">
+            {item.icon}
             <motion.span
               className="absolute left-full ml-3 px-3 py-1 rounded-md bg-white text-black whitespace-nowrap text-sm pointer-events-none opacity-0 group-hover:opacity-100"
               initial={{ x: -10 }}
@@ -30,6 +30,7 @@ const FloatingNav = () => {
             >
               {item.name}
             </motion.span>
+            </Link>
           </motion.li>
         ))}
       </ul>

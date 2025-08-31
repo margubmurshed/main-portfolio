@@ -7,7 +7,7 @@ import { Download, Eye } from "lucide-react";
 
 const Hero = () => {
     return (
-        <section className="relative">
+        <section className="relative" id="home">
             <div className="min-h-screen w-full bg-[#0d1411] relative">
                 {/* Emerald Radial Glow Background */}
                 <div
