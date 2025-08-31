@@ -1,6 +1,7 @@
 import About from "@/components/modules/Landing/About";
 import FloatingNav from "@/components/modules/Landing/FloatingNav";
 import Hero from "@/components/modules/Landing/Hero";
+import Projects from "@/components/modules/Landing/Projects";
 import Skills from "@/components/modules/Landing/Skills";
 import { useEffect } from "react";
 
@@ -21,6 +22,7 @@ const Landing = () => {
             <Hero />
             <About />
             <Skills />
+            <Projects />
         </div>
     );
 };
