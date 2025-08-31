@@ -6,7 +6,7 @@ interface ProjectCardProps {
     title: string;
     subTitle: string;
     featuredImage: string;
-    featuredSkills: string[];
+    featuredTechs: string[];
     id: number;
 }
 
@@ -15,7 +15,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     title,
     subTitle,
     featuredImage,
-    featuredSkills,
+    featuredTechs,
     id,
 }) => {
     return (
@@ -37,12 +37,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 <p className="text-sm text-gray-300">{subTitle}</p>
 
                 <div className="flex flex-wrap justify-center gap-2 mt-3">
-                    {featuredSkills.map((skill, i) => (
+                    {featuredTechs.map((tech, i) => (
                         <span
                             key={i}
                             className="text-xs bg-white/20 px-2 py-1 rounded-full"
                         >
-                            {skill}
+                            {tech}
                         </span>
                     ))}
                 </div>
