@@ -8,7 +8,7 @@
 }
 
 .active-link-scroll {
-  @apply text-background bg-primary;
+  @apply text-foreground bg-background border-2;
 }
 
 /* Apply this to your content container */

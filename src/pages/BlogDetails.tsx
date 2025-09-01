@@ -5,7 +5,7 @@ import { useGetBlogsQuery } from "@/redux/features/blog.api";
 import DOMPurify from "dompurify";
 import { format } from "date-fns";
 import { Badge } from "@/components/ui/badge";
-import { Calendar } from "lucide-react";
+import { Calendar, Home } from "lucide-react";
 import myImage from "@/assets/images/margub-murshed-image.png";
 import { useGetMargubQuery } from "@/redux/features/auth.api";
 
@@ -16,8 +16,8 @@ const fadeIn: Variants = {
 
 export default function BlogDetails() {
     const { slug } = useParams<{ slug: string }>();
-    const { data:blogsData, isFetching:blogsLoading } = useGetBlogsQuery({ slug });
-    const { data: margubData, isFetching:margubLoading } = useGetMargubQuery();
+    const { data: blogsData, isFetching: blogsLoading } = useGetBlogsQuery({ slug });
+    const { data: margubData, isFetching: margubLoading } = useGetMargubQuery();
 
     const blog = blogsData?.data?.[0];
 
@@ -55,6 +55,26 @@ export default function BlogDetails() {
                 />
             )}
 
+            <div className="fixed bottom-5 right-5 z-50">
+                <motion.div
+                    className="group relative"
+                    whileHover={{ scale: 1.2 }}
+                >
+
+                    <Link to="/" className="w-12 h-12 rounded-full flex items-center justify-center transition-all bg-white/10 hover:bg-white/20 shadow-md">
+                        <span className="mix-blend-difference"><Home /></span>
+                        <motion.span
+                            className="absolute right-full mr-3 px-3 py-1 rounded-md bg-white text-black whitespace-nowrap text-sm pointer-events-none opacity-0 group-hover:opacity-100"
+                            initial={{ x: -10 }}
+                            animate={{ x: 0 }}
+                            transition={{ duration: 0.3 }}
+                        >
+                            Home
+                        </motion.span>
+                    </Link>
+                </motion.div>
+            </div>
+
             <h1 className="text-3xl md:text-4xl font-bold mb-3">{blog!.title}</h1>
             <p className="mb-6 bg-pri">
                 <Badge><Calendar />{format(new Date(blog!.createdAt), "MMMM d, yyyy, hh:mm a")}</Badge>
@@ -65,7 +85,7 @@ export default function BlogDetails() {
             <div className="bg-primary p-5 rounded-md w-fit mx-auto mt-10">
                 <h3 className="text-center text-2xl font-semibold mb-5">Author</h3>
                 <div className="flex flex-col items-center">
-                    <img src={margubData?.data.picture || myImage} alt={margubData?.data.name}  className="w-32 rounded-full bg-accent mx-auto border-4 border-accent mb-3"/>
+                    <img src={margubData?.data.picture || myImage} alt={margubData?.data.name} className="w-32 rounded-full bg-accent mx-auto border-4 border-accent mb-3" />
                     <h4 className="text-2xl font-bold">{margubData?.data.name}</h4>
                     <Badge variant="outline" className="bg-background mt-2">{margubData?.data.designation}</Badge>
                 </div>
