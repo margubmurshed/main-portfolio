@@ -24,7 +24,7 @@ export default function HammerCursor() {
 
   return (
     <div
-      className="fixed top-0 left-0 pointer-events-none z-50"
+      className="fixed top-0 left-0 pointer-events-none z-[100]"
       style={{
         transform: `translate(${pos.x - 16}px, ${pos.y - 16}px) rotate(${isClicking ? "30deg" : "0deg"})`,
         transition: "transform 0.15s ease-out",

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Home, User, Code, Mail } from "lucide-react";
+import { Home, User, Code, Mail, Book } from "lucide-react";
 import { GiSkills } from "react-icons/gi";
 import { Link } from "react-scroll";
 
@@ -8,6 +8,7 @@ const navItems = [
   { name: "About", icon: <User size={24} />, href: "about" },
   { name: "Skills", icon: <GiSkills size={24} />, href: "skills" },
   { name: "Projects", icon: <Code size={24} />, href: "projects" },
+  { name: "Blogs", icon: <Book size={24} />, href: "blogs" },
   { name: "Contact", icon: <Mail size={24} />, href: "contact" },
 ];
 
